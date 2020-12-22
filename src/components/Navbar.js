@@ -58,7 +58,6 @@ export default Navbar
 
 const Nav = styled.div`
     background: ${({active}) => active ? '#181d61' : 'transparent'};
-    /* background: #181d61; */
     height: 80px;
     display: flex;
     align-items: center;

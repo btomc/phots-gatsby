@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import bg from '../images/background-1.jpg'
+import { Button } from './Button'
 
 const Hero = () => {
     return (
@@ -10,7 +11,7 @@ const Hero = () => {
                 <HeroItems>
                     <HeroH1>Unforgettable moments</HeroH1>
                     <HeroP>preserved forever</HeroP>
-                    <Button>See more</Button>
+                    <Button primary='true' big='true' to='/services'>See more</Button>
                 </HeroItems>
             </HeroContent>
         </HeroContainer>
@@ -76,7 +77,7 @@ const HeroItems = styled.div`
     padding: 0;
     color: #f2f2f2;
     line-height: 1.1;
-    font-weight: bold;
+    font-weight: 800;
 `;
 
 const HeroH1 = styled.h1`
@@ -89,8 +90,7 @@ const HeroH1 = styled.h1`
 const HeroP = styled.p`
     font-size: clamp(1.5rem, 3vw, 3rem);
     margin-bottom: 2rem;
-    font-weight: 500;
+    font-weight: 600;
 `;
 
-const Button = styled.button``;
 
