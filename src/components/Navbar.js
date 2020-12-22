@@ -7,13 +7,27 @@ import { Link } from 'gatsby'
 
 const Navbar = () => {
     const [click, setClick] = useState(false)
+    const [scroll, setScroll] = useState(false)
 
     const handleClick = () => setClick(!click)
+
+    const changeNav = () => {
+        if(window.scrollY >= 80) {
+            setScroll(true)
+        } else {
+            setScroll(false)
+        }
+    }
+
+    useEffect(() => {
+        changeNav()
+        window.addEventListener('scroll', changeNav)
+    }, [])
 
     return (
         <>
             <IconContext.Provider value={{ color: '#f2f2f2'}}>
-                <Nav click={click}>
+                <Nav active={scroll} click={click}>
                     <NavbarContainer>
                         <NavLogo to='/'>
                             <NavIcon />
@@ -42,9 +56,9 @@ const Navbar = () => {
 
 export default Navbar
 
-const Nav = styled.nav`
-    /* background: ${({active}) => active ? '#181d61' : 'linear-gradient(to bottom, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0) 100%'}; */
-    background: #181d61;
+const Nav = styled.div`
+    background: ${({active}) => active ? '#181d61' : 'transparent'};
+    /* background: #181d61; */
     height: 80px;
     display: flex;
     align-items: center;
