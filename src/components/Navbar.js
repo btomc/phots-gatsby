@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState} from 'react'
 import styled from 'styled-components'
 import { FaBars, FaTimes } from 'react-icons/fa'
 import { RiCameraLensFill } from 'react-icons/ri'
