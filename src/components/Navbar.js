@@ -7,27 +7,13 @@ import { Link } from 'gatsby'
 
 const Navbar = () => {
     const [click, setClick] = useState(false)
-    const [scroll, setScroll] = useState(false)
 
     const handleClick = () => setClick(!click)
-
-    const changeNav = () => {
-        if(window.scrollY >= 80) {
-            setScroll(true)
-        } else {
-            setScroll(false)
-        }
-    }
-
-    useEffect(() => {
-        changeNav()
-        window.addEventListener('scroll', changeNav)
-    }, [])
 
     return (
         <>
             <IconContext.Provider value={{ color: '#f2f2f2'}}>
-                <Nav active={scroll} click={click}>
+                <Nav click={click}>
                     <NavbarContainer>
                         <NavLogo to='/'>
                             <NavIcon />
@@ -57,18 +43,18 @@ const Navbar = () => {
 export default Navbar
 
 const Nav = styled.div`
-    background: ${({active}) => active ? '#181d61' : 'transparent'};
+    background: transparent;
     height: 80px;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 1rem;
-    position: sticky;
+    position: relative;
     top: 0;
     z-index: 999;
 
     @media screen and (max-width: 960px) {
-        background: ${({ click }) => (click ? '#181d61' : 'transparent')};
+        background: ${({ click }) => (click ? '#04294d' : 'transparent')};
         transition: 0.8s all ease;
     }
 `;
@@ -94,7 +80,7 @@ const NavLogo = styled(Link)`
 `;
 
 const NavIcon = styled(RiCameraLensFill)`
-    margin: 0 0.5rem 0 2rem;
+    margin: 0 0.5rem 0 1.4rem;
     font-size: 2.3rem;
 `;
 
@@ -126,7 +112,7 @@ const NavMenu = styled.ul`
         top: ${({ click }) => (click ? '100%' : '-1000px')};
         opacity: 1;
         transition: all 0.2s ease;
-        background: #181d61;
+        background: #04294d;
     }
 `;
 
@@ -134,7 +120,8 @@ const NavItem = styled.li`
     height: 80px;
 
     @media screen and (max-width: 960px) {
-        padding: 3rem;
+        padding: 2rem;
+        margin: 1rem;
     }
 `;
 
@@ -144,8 +131,8 @@ const NavLink = styled(Link)`
     align-items: center;
     text-decoration: none;
     padding: 1rem;
-    height: 100%;
-    font-size: 1.3rem;
+    height: 80px;
+    font-size: 1.4rem;
 
     &:hover {
         color: #42d6ff;
@@ -154,10 +141,21 @@ const NavLink = styled(Link)`
 
     @media screen and (max-width: 960px) {
         text-align: center;
-        padding: 2rem;
         width: 100%;
-        display: table;
+        height: auto;
+        padding: 1.5rem;
+        display: inline-block;
         font-size: 1.8rem;
+        text-transform: uppercase;
+        background-image: linear-gradient(120deg, transparent 0%, transparent 50%, #42d6ff 50%);
+        background-size: 235%;
+        transition: all .4s;
+
+        &:hover {
+            background-position: 100%;
+            color: #04294d;
+            transform: translateX(1rem);
+        }
     }
 `;
 

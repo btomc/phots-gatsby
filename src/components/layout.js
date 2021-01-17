@@ -20,6 +20,16 @@ const Layout = ({ children }) => {
     <>
       <Navbar />
       <main>{children}</main>
+      <p>HELLOPOP</p>
+      <p>HELLOPOP</p>
+      <p>HELLOPOP</p>
+      <p>HELLOPOP</p>
+      <p>HELLOPOP</p>
+      <p>HELLOPOP</p>
+      <p>HELLOPOP</p>
+      <p>HELLOPOP</p>
+      <p>HELLOPOP</p>
+      <p>HELLOPOP</p>
     </>
   )
 }
