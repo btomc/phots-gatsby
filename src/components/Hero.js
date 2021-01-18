@@ -6,7 +6,9 @@ import { Button } from './Button'
 const Hero = () => {
     return (
         <HeroContainer>
-            <HeroBg><img src={bg} alt='photographer' /></HeroBg>
+            <HeroBg>
+                <ImgBg src={bg} alt='photographer'/>
+            </HeroBg>
             <HeroContent>
                 <HeroItems>
                     <HeroH1>Unforgettable moments</HeroH1>
@@ -53,10 +55,13 @@ const HeroBg = styled.div`
     width: 100%;
     height: 100%;
     overflow: hidden;
+`;
 
-    img {
-        object-fit: cover;
-    }
+const ImgBg = styled.img`
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+    object-fit: cover;
 `;
 
 const HeroContent = styled.div`

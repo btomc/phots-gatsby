@@ -1,11 +1,12 @@
 import React from "react"
+import Heading from "../components/Heading"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
 const Contact = () => (
   <Layout>
     <SEO title="Page two" />
-    <p>Contact</p>
+    <Heading heading='Contact' />
   </Layout>
 )
 
