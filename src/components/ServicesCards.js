@@ -90,6 +90,12 @@ const Card = styled.div`
     @media screen and (max-width: 910px) {
         margin-bottom: 3rem;
     }
+
+    @media screen and (max-width: 400px) {
+        &:hover {
+            transform: none;
+        }
+    }
 `;
 
 const CardPicture = styled.div`

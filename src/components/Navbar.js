@@ -65,7 +65,6 @@ const NavbarContainer = styled.div`
     height: 80px;
     z-index: 1;
     width: 100%;
-    max-width: 1000px;
 `;
 
 const NavLogo = styled(Link)`
@@ -77,6 +76,7 @@ const NavLogo = styled(Link)`
     display: flex;
     align-items: center;
     font-weight: 600;
+    margin-left: 1.6rem;
 `;
 
 const NavIcon = styled(RiCameraLensFill)`
@@ -102,6 +102,7 @@ const NavMenu = styled.ul`
     align-items: center;
     list-style: none;
     text-align: center;
+    margin-right: 1.6rem;
 
     @media screen and (max-width: 960px) {
         display: flex;
