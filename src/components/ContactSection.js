@@ -73,10 +73,9 @@ const ContactContent = styled.div`
     }
 `;
 
-const ContactH2 = styled.div`
+const ContactH2 = styled.h2`
     font-size: 2.5rem;
     margin-bottom: 1.7rem;
-
 `;
 
 const ContactP = styled.div`
