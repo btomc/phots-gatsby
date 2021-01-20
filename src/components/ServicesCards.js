@@ -92,6 +92,8 @@ const Card = styled.div`
     }
 
     @media screen and (max-width: 400px) {
+        width: 90%;
+
         &:hover {
             transform: none;
         }

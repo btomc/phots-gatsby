@@ -76,7 +76,11 @@ const NavLogo = styled(Link)`
     display: flex;
     align-items: center;
     font-weight: 600;
-    margin-left: 1.6rem;
+    margin-left: 1rem;
+
+    @media screen and (max-width: 560px) {
+        margin-left: .5rem;
+    }
 `;
 
 const NavIcon = styled(RiCameraLensFill)`

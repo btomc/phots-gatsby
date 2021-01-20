@@ -17,7 +17,7 @@ const Footer = () => {
                     <SocialIcons>
                         <SocialIconLink href="//www.facebook.com/" target='_blank' aria-label='Facebbok'><FaFacebook/></SocialIconLink>
                         <SocialIconLink href="//www.instagram.com/?hl=en" target='_blank' aria-label='Facebbok'><FaInstagram/></SocialIconLink>
-                        <SocialIconLink href="//www.linkedin.com/" target='_blank' aria-label='Linkedin'><FaLinkedin/></SocialIconLink>
+                        <SocialIconLink href="//www.linkedin.com/" target='_blank' aria-label='Linkedin'><FaLinkedin /></SocialIconLink>
                     </SocialIcons>
                 </SocialMediaWrap>
             </SocialMedia>           
@@ -35,7 +35,6 @@ const FooterContainer = styled.div`
 `;
 
 const SocialMedia = styled.div`
-    max-width: 1000px;
     width: 100%;
 `;
 
@@ -43,8 +42,7 @@ const SocialMediaWrap = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 90%;
-    max-width: 1000px;
+    width: 100%;
     margin: 20px auto;
 
     @media screen and (max-width: 520px) {
@@ -59,6 +57,7 @@ const SocialLogo = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-left: 1.8rem;
     
     @media screen and (max-width: 520px) {
         display: none;
@@ -81,10 +80,12 @@ const SocialIcons = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;   
+    margin-right: 1.6rem;
 
     @media screen and (max-width: 520px) {
         margin-bottom: 1.5rem;
         margin-left: 1.5rem;
+        margin-right: 0;
     } 
 `;
 

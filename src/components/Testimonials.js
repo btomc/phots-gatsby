@@ -61,18 +61,9 @@ const TestimonialsContainer = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 680px;
+    height: 640px;
     position: relative;
     overflow: hidden;
-
-    :before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        z-index: 2;
-        opacity: 0.8;
-    }
 `;
 
 const TestimonialsBg = styled.div`
@@ -147,7 +138,7 @@ const TestimonialsWrap = styled.div`
         margin-bottom: 0;
     }
 
-    @media screen and (max-width: 528px) {
+    @media screen and (max-width: 570px) {
         width: 90%;
     }
 `;
@@ -160,7 +151,7 @@ const OpinionWrapper = styled.div`
     justify-content: center;
     width: 100%;
     height: 100%;   
-    padding-top: 3.6rem;
+    padding-top: 3rem;
     z-index: 14;
     overflow: hidden;
     position: relative; 
@@ -212,7 +203,6 @@ const OpinionText = styled.p`
     @media screen and (max-width: 999px) {
         font-size: .9rem;  
         line-height: 1.6;
-        overflow: hidden;
     }
 `;
 
@@ -263,6 +253,10 @@ const arrowButtons = css`
 
 const NextArrow = styled(IoArrowForward)`
     ${arrowButtons}
+
+    @media screen and (max-width: 862px) {
+        margin-right: 0;
+    }
 `;
 
 const PrevArrow = styled(IoArrowBack)`
