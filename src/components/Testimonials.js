@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useState, useRef, useEffect} from 'react'
 import styled, { css } from 'styled-components'
 import testimonialsBg from '../images/background-7.jpg'
 import { IoArrowForward, IoArrowBack } from 'react-icons/io5'
@@ -6,12 +6,35 @@ import { IoArrowForward, IoArrowBack } from 'react-icons/io5'
 const Testimonials = ({ slides }) => {
     const [current, setCurrent] = useState(0)
     const length = slides.length
+    const timeout = useRef(null)
+
+    useEffect(() => {
+        const nextSlide = () => {
+            setCurrent(current => (current === length - 1 ? 0 : current + 1))
+        }
+
+        timeout.current = setTimeout(nextSlide, 5000)
+
+        return function() {
+            if (timeout.current) {
+                clearTimeout(timeout.current)
+            }
+        }
+    }, [current, length])
 
     const nextSlide = () => {
+        if (timeout.current) {
+            clearTimeout(timeout.current)
+        }
+
         setCurrent(current === length - 1 ? 0 : current + 1)
     }
 
     const prevSlide = () => {
+        if (timeout.current) {
+            clearTimeout(timeout.current)
+        }
+
         setCurrent(current === 0 ? length - 1 : current - 1)
     }
 
@@ -132,6 +155,7 @@ const TestimonialsWrap = styled.div`
     margin-bottom: 2.4rem;
     position: relative;
     overflow: hidden;
+    box-shadow: 0 1.5rem 4rem rgba(0,0,0, .15);
 
     @media screen and (max-width: 862px) {
         height: 65%;
