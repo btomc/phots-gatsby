@@ -1,55 +1,25 @@
 import React from 'react'
 import styled from 'styled-components'
-import cardImg1 from '../images/card-1.jpg'
-import cardImg2 from '../images/card-2.jpg'
-import cardImg3 from '../images/card-3.jpg'
 
-const ServicesCards = () => {
+const ServicesCards = ({ cards }) => {
     return (
         <>
             <CardsWrapper>
-                <Card>
-                    <CardPicture><ImgCard src={cardImg1} alt='wedding cake' /></CardPicture>
-                    <CardHeading>
-                        <CardSpan>Events</CardSpan>
-                    </CardHeading>
-                    <CardDetails>
-                        <DetailsList>
-                            <DetailsItem>Weddings</DetailsItem>
-                            <DetailsItem>Baby Showers</DetailsItem>
-                            <DetailsItem>Birthdays</DetailsItem>
-                        </DetailsList>
-                    </CardDetails>
-                </Card>
-
-                <Card>
-                    <CardPicture><ImgCard src={cardImg2} alt='smiling girls' /></CardPicture>
-                    <CardHeading>
-                        <CardSpan>Sessions</CardSpan>
-                    </CardHeading>
-                    <CardDetails>
-                        <DetailsList>
-                            <DetailsItem>Portraits</DetailsItem>
-                            <DetailsItem>Family Photos</DetailsItem>
-                            <DetailsItem>Photo Shoots</DetailsItem>
-                        </DetailsList>
-                    </CardDetails>
-                </Card>
-
-                <Card>
-                    <CardPicture><ImgCard src={cardImg3} alt='pancakes' /></CardPicture>
-                    <CardHeading>
-                        <CardSpan>Art</CardSpan>
-                    </CardHeading>
-                    <CardDetails>
-                        <DetailsList>
-                            <DetailsItem>Food Photos</DetailsItem>
-                            <DetailsItem>Landscapes</DetailsItem>
-                            <DetailsItem>Artistic Photos</DetailsItem>
-                        </DetailsList>
-                    </CardDetails>
-                </Card>
-
+                {cards.map((card, index) => (
+                    <Card key={index}>
+                        <CardPicture><ImgCard src={card.image} /></CardPicture>
+                        <CardHeading>
+                            <CardSpan>{card.title}</CardSpan>
+                        </CardHeading>
+                        <CardDetails>
+                            <DetailsList>
+                                <DetailsItem>{card.services[0]}</DetailsItem>
+                                <DetailsItem>{card.services[1]}</DetailsItem>
+                                <DetailsItem>{card.services[2]}</DetailsItem>
+                            </DetailsList>
+                        </CardDetails>
+                    </Card> 
+                ))}
             </CardsWrapper>
         </>
     )
